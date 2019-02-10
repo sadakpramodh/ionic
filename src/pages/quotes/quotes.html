@@ -22,7 +22,7 @@
           <button ion-button 
             clear small 
             (click)="onAddToFavorite(quote)"
-            *ngIf="isFavorite(quote)">
+            *ngIf="!isFavorite(quote)">
               Favorite
           </button>
           <button ion-button 
