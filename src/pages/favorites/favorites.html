@@ -3,7 +3,7 @@
 
   <ion-navbar>
     <ion-buttons start>
-        <button ion-button (click)="onOpenMenu()">
+        <button ion-button menuToggle>
             <ion-icon name="menu"></ion-icon>
           </button>
     </ion-buttons>
@@ -19,6 +19,7 @@
     <ion-item-sliding *ngFor="let quote of quotes">
         <ion-item 
         color="quoteBackground"
+        [ngClass]="{alt: isAltBackground()}"
         (click)="onViewQuote(quote)">
           <h2>{{ quote.person }}</h2>
           <p>{{ quote.text }}</p>
