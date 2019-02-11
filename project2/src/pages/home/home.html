@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title center>
+      Assignment
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    
+  <ion-label text-center>
+    <h1>Enter the right Code</h1>
+    <p *ngIf="!didWin()">Tap twice, press four times</p>
+    <p *ngIf="didWin()">You Won!</p>
+  </ion-label>
+  <ion-list>
+    <ion-item>
+      Tapped: {{tapped}}
+    </ion-item>
+    <ion-item>
+        Pressed: {{pressed}}
+      </ion-item>
+  </ion-list>
+  <reset-page (didReset)="didReset($event)"></reset-page>
+  <ion-grid color="green">
+      <ion-row>
+        <ion-col style="background-color: green" (tap)="onTap()">Tap here</ion-col>
+        <ion-col style="background-color: green" (press)="onPress()">Press here</ion-col>
+      </ion-row>
+    </ion-grid>
+    <touch-page></touch-page>
+  
+</ion-content>
